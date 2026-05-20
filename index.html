@@ -39,7 +39,7 @@
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://fe.dtyuedan.cn/shop/gptplus" target="_blank" rel="noopener noreferrer nofollow">进入卡网下单</a>
-          <a class="btn btn-secondary" href="https://fe.dtyuedan.cn/order" target="_blank" rel="noopener noreferrer nofollow" onclick="alert('忘记卡密或使用说明？使用 JR 开头的订单号或联系方式，可通过此处查询订单。')">查询订单</a>
+          <a class="btn btn-secondary" href="https://fe.dtyuedan.cn/order" target="_blank" rel="noopener noreferrer nofollow" data-order-query>查询订单</a>
         </div>
         <dl class="hero-meta">
           <div>
@@ -188,6 +188,59 @@
       </div>
     </section>
   </main>
+
+  <div class="order-query-modal" data-order-query-modal hidden role="dialog" aria-modal="true" aria-labelledby="orderQueryTitle">
+    <div class="order-query-dialog">
+      <h2 id="orderQueryTitle">查询订单</h2>
+      <p>忘记卡密或使用说明？使用 JR 开头的订单号或联系方式，可通过此处查询订单。</p>
+      <div class="order-query-actions">
+        <button type="button" data-order-cancel>取消</button>
+        <button class="order-query-confirm" type="button" data-order-confirm>确认进入</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const modal = document.querySelector("[data-order-query-modal]");
+      const triggers = document.querySelectorAll("[data-order-query]");
+      if (!modal || !triggers.length) return;
+
+      const cancelButton = modal.querySelector("[data-order-cancel]");
+      const confirmButton = modal.querySelector("[data-order-confirm]");
+      let targetUrl = "";
+
+      const closeModal = () => {
+        modal.hidden = true;
+        targetUrl = "";
+      };
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          targetUrl = trigger.href;
+          modal.hidden = false;
+          confirmButton.focus();
+        });
+      });
+
+      cancelButton.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.hidden) closeModal();
+      });
+
+      confirmButton.addEventListener("click", () => {
+        const url = targetUrl;
+        closeModal();
+        if (url) window.open(url, "_blank", "noopener,noreferrer");
+      });
+    })();
+  </script>
 
   <footer class="clean-footer">
     <p>© 2024 文文 Gpt. 本站提供会员充值协助服务，与 Open.AI 公司无关联关系。</p>

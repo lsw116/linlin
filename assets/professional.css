@@ -617,6 +617,66 @@ strong {
   color: var(--soft) !important;
 }
 
+.order-query-modal[hidden] {
+  display: none !important;
+}
+
+.order-query-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.42);
+}
+
+.order-query-dialog {
+  width: min(420px, 100%);
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+  text-align: left;
+}
+
+.order-query-dialog h2 {
+  margin: 0 0 10px !important;
+  color: var(--ink) !important;
+  font-size: 1.25rem !important;
+}
+
+.order-query-dialog p {
+  margin: 0 !important;
+  color: var(--muted) !important;
+}
+
+.order-query-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.order-query-actions button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 760;
+  cursor: pointer;
+}
+
+.order-query-actions .order-query-confirm {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
 /* Shared subpages */
 body:not(.clean-home) {
   display: block !important;
