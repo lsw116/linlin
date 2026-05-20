@@ -549,6 +549,7 @@ strong {
     border: 1px solid var(--line);
     box-shadow: inset 0 3px 0 var(--brand-soft);
     color: var(--ink);
+    text-align: center;
   }
 
   .split-section .contact-panel h2 {
@@ -566,6 +567,7 @@ strong {
   .split-section .wechat-box {
     background: #ffffff;
     border: 1px solid var(--line);
+    text-align: center;
   }
 
   .split-section .wechat-box span {
