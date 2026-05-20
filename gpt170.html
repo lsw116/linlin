@@ -80,42 +80,187 @@
         }
     </style>
   <link rel="stylesheet" href="assets/professional.css">
+  <style>
+    @media (min-width: 901px) {
+      .policy-main > .container {
+        max-width: 1080px !important;
+        display: block !important;
+        text-align: left !important;
+      }
+
+      .policy-hero,
+      .policy-section,
+      .policy-summary {
+        border: 1px solid #d8e1ed;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .policy-hero {
+        padding: 28px;
+        margin-bottom: 16px;
+        background: linear-gradient(180deg, #f8fbff 0%, #fff 100%);
+      }
+
+      .policy-hero h1 {
+        margin: 0 0 10px !important;
+        font-size: 2.25rem !important;
+      }
+
+      .policy-hero p {
+        max-width: 760px;
+        margin: 0 !important;
+      }
+
+      .policy-kpis {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .policy-kpis div {
+        padding: 14px 16px;
+        border: 1px solid #dfe7f2;
+        border-radius: 8px;
+        background: #f8fafc;
+      }
+
+      .policy-kpis span {
+        display: block;
+        color: #66758a;
+        font-size: .82rem;
+        font-weight: 700;
+      }
+
+      .policy-kpis strong {
+        display: block;
+        margin-top: 3px;
+        color: #111827 !important;
+        font-size: 1.08rem;
+      }
+
+      .policy-section {
+        display: grid;
+        grid-template-columns: 300px minmax(0, 1fr);
+        gap: 20px;
+        padding: 22px;
+        margin-top: 16px;
+      }
+
+      .policy-section h2 {
+        margin: 0 0 8px !important;
+        padding: 0 !important;
+        border: 0 !important;
+      }
+
+      .policy-section p {
+        margin: 0 !important;
+      }
+
+      .policy-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .policy-gallery.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .policy-gallery .notice-image {
+        width: 100% !important;
+        margin: 0 !important;
+        background: #f8fafc;
+        object-fit: contain;
+      }
+
+      .policy-summary {
+        margin-top: 16px;
+        padding: 20px 22px;
+        background: #f8fafc;
+      }
+
+      .policy-summary p {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+      }
+    }
+  </style>
 </head>
-<body class="policy-page">
+<body class="policy-page policy-main">
 <div class="subpage-topbar"><a class="subpage-brand" href="index.html">文文 Gpt</a><nav><a href="index.html">首页</a><a href="help.html">帮助</a><a href="gpt170.html">价格说明</a><a href="help.html#contact">联系客服</a></nav></div>
 
 
     <div class="container">
 
-        <!-- ✅ 新增：写在最前面的提示 -->
+        <header class="policy-hero">
+            <p class="eyebrow">Price & Policy</p>
+            <h1>价格与政策说明</h1>
+            <p>本页用于说明当前服务价格、渠道成本和低价渠道风险，方便下单前快速判断。</p>
+            <div class="policy-kpis">
+                <div><span>当前价格</span><strong>180 元 / 月</strong></div>
+                <div><span>服务重点</span><strong>流程清晰，可追踪</strong></div>
+                <div><span>风险提醒</span><strong>谨慎选择异常低价</strong></div>
+            </div>
+        </header>
+
         <div class="top-alert">
             <div class="title">重要提醒：谨防黑白混充 / 0元购低价套路</div>
             <p>目前市面上存在很多黑白混充、0元购（0元试用卡bug充一个月甚至一年）等低价渠道，存在 <span class="em">极高封号风险</span> 及其他隐患</p>
             <p>我们坚持 <strong>合规运营</strong>，而非为了无底线抢客源、恶性竞争。<strong>诚信经营、稳定服务</strong> 才是根本。</p>
         </div>
-    <img src="help/jg011.png" alt="jg00" class="notice-image">
-    <img src="help/jg012.png" alt="jg00" class="notice-image">
-    <img src="help/jg013.png" alt="jg00" class="notice-image">
 
-        <p><strong>当前稳定渠道成本较高；我们会优先采用流程清晰、可追踪的处理方式。</strong> </p>
-        <img src="help/th.png" alt="同行" class="notice-image">
+        <section class="policy-section">
+            <div>
+                <h2>低价渠道风险</h2>
+                <p>异常低价渠道通常伴随更高账户风险。请优先选择流程清晰、售后明确的服务。</p>
+            </div>
+            <div class="policy-gallery three">
+                <img src="help/jg011.png" alt="低价风险说明 1" class="notice-image">
+                <img src="help/jg012.png" alt="低价风险说明 2" class="notice-image">
+                <img src="help/jg013.png" alt="低价风险说明 3" class="notice-image">
+            </div>
+        </section>
 
-        <p>异常低价渠道通常伴随更高账户风险，请优先选择流程清晰、售后明确的服务。 </p>
-        <img src="help/yk.png" alt="预付费" class="notice-image">
+        <section class="policy-section">
+            <div>
+                <h2>渠道与成本</h2>
+                <p><strong>当前稳定渠道成本较高；我们会优先采用流程清晰、可追踪的处理方式。</strong></p>
+            </div>
+            <div class="policy-gallery">
+                <img src="help/th.png" alt="同行价格说明" class="notice-image">
+                <img src="help/yk.png" alt="预付费说明" class="notice-image">
+            </div>
+        </section>
 
-        <p><strong>当前可用充值资源较紧张，价格调整为 180 元。</strong></p>
-        <img src="help/jg005.png" alt="jg00" class="notice-image">
-        <img src="help/jg004.png" alt="jg00" class="notice-image">
-        <img src="help/jg001.jpg" alt="jg01" class="notice-image">
-        <img src="help/jg003.jpg" alt="jg03" class="notice-image">
+        <section class="policy-section">
+            <div>
+                <h2>当前价格说明</h2>
+                <p><strong>当前可用充值资源较紧张，价格调整为 180 元。</strong></p>
+            </div>
+            <div class="policy-gallery">
+                <img src="help/jg005.png" alt="价格说明 1" class="notice-image">
+                <img src="help/jg004.png" alt="价格说明 2" class="notice-image">
+                <img src="help/jg001.jpg" alt="价格说明 3" class="notice-image">
+                <img src="help/jg003.jpg" alt="价格说明 4" class="notice-image">
+            </div>
+        </section>
 
-        <img src="help/gpt16.png" alt="公告图片" class="notice-image">
-        <p>
-            <strong>9 月 16 日后，部分低价地区渠道已收紧。</strong>建议优先关注渠道稳定性、操作流程透明度和售后保障。
-        </p>
-        <img src="help/170.jpg" alt="正规充值价格" class="notice-image">
+        <section class="policy-section">
+            <div>
+                <h2>政策变化</h2>
+                <p><strong>9 月 16 日后，部分低价地区渠道已收紧。</strong>建议优先关注渠道稳定性、操作流程透明度和售后保障。</p>
+            </div>
+            <div class="policy-gallery">
+                <img src="help/gpt16.png" alt="公告图片" class="notice-image">
+                <img src="help/170.jpg" alt="正规充值价格" class="notice-image">
+            </div>
+        </section>
 
-        <div class="description">
+        <div class="description policy-summary">
             <p>
                 180 元价格主要由官方订阅费用、支付渠道成本、设备与人工服务、系统维护及售后保障组成。
             </p>
