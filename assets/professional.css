@@ -1309,3 +1309,52 @@ body:not(.clean-home) {
   justify-content: initial !important;
   align-items: initial !important;
 }
+
+.order-steps {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.order-step {
+  display: grid;
+  gap: 5px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: 1px solid #c9d6ea;
+  background: #ffffff;
+  color: #101827;
+}
+
+.order-step:hover {
+  text-decoration: none;
+  border-color: #1f4fd7;
+}
+
+.order-step span {
+  color: #1f4fd7;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.order-step strong {
+  color: #101827 !important;
+  font-size: 1.12rem;
+}
+
+.order-step small {
+  color: #647085;
+  font-weight: 600;
+}
+
+.order-step:first-child {
+  background: #1f4fd7;
+  border-color: #1f4fd7;
+  color: #ffffff;
+}
+
+.order-step:first-child span,
+.order-step:first-child strong,
+.order-step:first-child small {
+  color: #ffffff !important;
+}
