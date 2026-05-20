@@ -1358,3 +1358,27 @@ body:not(.clean-home) {
 .order-step:first-child small {
   color: #ffffff !important;
 }
+
+/* Keep purchase/recharge as real buttons, only separated into step 1 and step 2. */
+.order-actions {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.order-actions .step-button {
+  display: flex;
+  gap: 10px;
+  min-height: 54px;
+  font-size: 1rem;
+}
+
+.order-actions .step-button span {
+  font-size: 0.86rem;
+  font-weight: 800;
+  opacity: 0.86;
+}
+
+.order-steps {
+  display: none !important;
+}
