@@ -295,6 +295,23 @@ strong {
   font-weight: 760;
 }
 
+.meta-copy {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+}
+
+.meta-copy:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 .order-card {
   display: flex;
   flex-direction: column;
@@ -354,6 +371,32 @@ strong {
   color: var(--muted) !important;
 }
 
+.price-detail-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: -4px 0 18px;
+  color: var(--brand);
+  font-size: 0.94rem;
+  font-weight: 780;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.price-detail-link::after {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-left: 0.46rem;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.price-detail-link:hover {
+  color: #1746b8;
+}
+
 .order-actions {
   display: grid;
   gap: 12px;
@@ -373,6 +416,40 @@ strong {
   font-size: 0.84rem;
   font-weight: 820;
   opacity: 0.88;
+}
+
+.step-hover-tips {
+  position: relative;
+  min-height: 38px;
+}
+
+.step-tip {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 12px;
+  background: #eef5ff;
+  color: var(--brand);
+  font-size: 0.92rem;
+  font-weight: 820;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  pointer-events: none;
+}
+
+.order-actions .btn-primary:hover ~ .step-hover-tips .step-tip-buy,
+.order-actions .btn-primary:focus-visible ~ .step-hover-tips .step-tip-buy,
+.order-actions .btn-secondary:hover ~ .step-hover-tips .step-tip-recharge,
+.order-actions .btn-secondary:focus-visible ~ .step-hover-tips .step-tip-recharge {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .order-steps {
@@ -621,7 +698,8 @@ strong {
   display: none !important;
 }
 
-.order-query-modal {
+.order-query-modal,
+.contact-qr-modal {
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -631,7 +709,12 @@ strong {
   background: rgba(15, 23, 42, 0.42);
 }
 
-.order-query-dialog {
+.contact-qr-modal[hidden] {
+  display: none !important;
+}
+
+.order-query-dialog,
+.contact-qr-dialog {
   width: min(420px, 100%);
   padding: 22px;
   background: #fff;
@@ -641,15 +724,51 @@ strong {
   text-align: left;
 }
 
-.order-query-dialog h2 {
+.contact-qr-dialog {
+  position: relative;
+  width: min(390px, 100%);
+  text-align: center;
+}
+
+.order-query-dialog h2,
+.contact-qr-dialog h2 {
   margin: 0 0 10px !important;
   color: var(--ink) !important;
   font-size: 1.25rem !important;
 }
 
-.order-query-dialog p {
+.order-query-dialog p,
+.contact-qr-dialog p {
   margin: 0 !important;
   color: var(--muted) !important;
+  white-space: pre-line !important;
+}
+
+.contact-qr-image {
+  display: block;
+  width: min(260px, 100%);
+  margin: 18px auto 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.contact-qr-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--muted);
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .order-query-actions {
@@ -970,6 +1089,13 @@ body:not(.clean-home) #backToTopBtn {
   max-width: 900px !important;
 }
 
+.guide-page > .subpage-topbar {
+  position: sticky;
+  top: 10px;
+  z-index: 1200;
+  backdrop-filter: blur(16px);
+}
+
 .guide-page > .container > p:first-of-type {
   margin: 0 0 16px !important;
   padding: 14px 16px !important;
@@ -982,7 +1108,7 @@ body:not(.clean-home) #backToTopBtn {
 
 .guide-page .nav-bar {
   position: sticky !important;
-  top: 10px !important;
+  top: 86px !important;
   margin: 16px 0 22px !important;
   padding: 8px !important;
   background: #fff !important;

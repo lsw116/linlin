@@ -334,10 +334,10 @@
       }
     }
 
-    @media (max-width: 900px) {
-      .policy-main {
-        padding: 0 14px 32px;
-      }
+	    @media (max-width: 900px) {
+	      .policy-main {
+	        padding: 0 14px 32px;
+	      }
 
       .policy-main > .container {
         padding: 16px !important;
@@ -358,12 +358,134 @@
       .policy-gallery.three .policy-image-link {
         min-height: 240px;
         height: 58vw;
-        max-height: 420px;
-      }
-    }
+	        max-height: 420px;
+	      }
+	    }
 
-    @media (min-width: 901px) {
-      .policy-main > .container {
+	    @media (max-width: 640px) {
+	      .policy-main {
+	        padding: 0 10px 28px;
+	      }
+
+	      .policy-main .subpage-topbar {
+	        width: calc(100% - 20px) !important;
+	        max-width: calc(100% - 20px) !important;
+	        margin-top: 10px;
+	        padding: 10px;
+	        gap: 8px;
+	      }
+
+	      .policy-main .subpage-topbar nav {
+	        width: 100%;
+	        flex-wrap: nowrap;
+	        gap: 4px;
+	        overflow-x: auto;
+	        padding-bottom: 2px;
+	        -webkit-overflow-scrolling: touch;
+	      }
+
+	      .policy-main .subpage-topbar nav a {
+	        flex: 0 0 auto;
+	        min-height: 32px;
+	        padding: 0 9px;
+	        font-size: 0.86rem;
+	      }
+
+	      .policy-main > .container {
+	        width: calc(100% - 20px) !important;
+	        max-width: calc(100% - 20px) !important;
+	        margin: 10px auto 28px !important;
+	        padding: 12px !important;
+	      }
+
+	      .policy-hero {
+	        padding: 20px 18px;
+	        margin-bottom: 12px;
+	      }
+
+	      .policy-hero h1 {
+	        margin-bottom: 10px !important;
+	        font-size: clamp(1.72rem, 7.4vw, 2.05rem) !important;
+	        line-height: 1.16 !important;
+	      }
+
+	      .policy-hero > p:not(.eyebrow) {
+	        max-width: none;
+	        font-size: 1rem;
+	        line-height: 1.65 !important;
+	      }
+
+	      .policy-section {
+	        display: block;
+	        padding: 16px;
+	        margin-top: 12px;
+	      }
+
+	      .policy-section > div:first-child {
+	        margin-bottom: 14px;
+	      }
+
+	      .policy-section h2 {
+	        margin-bottom: 10px !important;
+	        padding-bottom: 10px !important;
+	        border-bottom: 1px solid #d9e3ef !important;
+	        font-size: clamp(1.28rem, 5.6vw, 1.5rem) !important;
+	        line-height: 1.24 !important;
+	      }
+
+	      .policy-section p {
+	        max-width: none;
+	        font-size: 0.98rem;
+	        line-height: 1.68 !important;
+	      }
+
+	      .policy-gallery,
+	      .policy-gallery.three {
+	        grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+	        gap: 10px;
+	      }
+
+	      .policy-image-link,
+	      .policy-gallery.three .policy-image-link {
+	        min-height: 0;
+	        height: clamp(178px, 52vw, 232px);
+	        max-height: none;
+	        padding: 5px;
+	      }
+
+	      .policy-image-link .notice-image {
+	        object-fit: cover;
+	        object-position: top center;
+	      }
+
+	      .policy-summary {
+	        padding: 16px;
+	      }
+
+	      .policy-summary p {
+	        font-size: 0.96rem;
+	        line-height: 1.66 !important;
+	      }
+
+	      .policy-lightbox {
+	        padding: 12px;
+	      }
+
+	      .policy-lightbox img {
+	        max-width: 96vw;
+	        max-height: 86vh;
+	      }
+
+	      .policy-lightbox-close {
+	        top: 10px;
+	        right: 10px;
+	        width: 44px;
+	        height: 44px;
+	      }
+	    }
+
+	    @media (min-width: 901px) {
+	      .policy-main > .container {
         max-width: 1080px !important;
         display: block !important;
         text-align: left !important;
@@ -479,14 +601,14 @@
 
         <header class="policy-hero">
             <p class="eyebrow">Price & Policy</p>
-            <h1>官网新规解读</h1>
+            <h1>价格说明、服务口碑</h1>
             <p>重要提醒：警惕低价不正规渠道，可能带来封号、追责等风险，账号追责周期可能长达 60~90 天，甚至更久。</p>
         </header>
 
         <section class="policy-section">
             <div>
-                <h2>官方已经下场控制和统一价格</h2>
-                <p><strong>2025年9月16号后,尼区等国家的低价已经不复存在！</strong>官方已经下场控制和统一价格，不要再对任何低价渠道有侥幸心理！稳定安全才是王道！</p>
+                <h2>9.16官网新规</h2>
+                <p>官方已经统一价格和打击漏洞刷会员等行为，不要再对任何低价渠道有侥幸心理！</p>
             </div>
             <div class="policy-gallery">
                 <a class="policy-image-link" href="help/gpt16.png"><img src="help/gpt16.png" alt="公告图片" class="notice-image" loading="lazy" decoding="async"></a>
@@ -497,7 +619,7 @@
         <section class="policy-section">
             <div>
                 <h2>稳定才是王道</h2>
-                <p>市面上大部分低价渠道涉及黑白混充、0元购、卡bug等猫腻，可能带来封号、追责等隐患。</p>
+                <p>市面上大部分低价渠道涉及嘿卡、0元购、卡bug等猫腻，可能带来封号、追责等隐患。</p>
                 <p>我们坚持合规运营，而非为了抢客源、无底线恶性竞争。诚信经营、稳定服务才是根本。</p>
             </div>
             <div class="policy-gallery">
@@ -512,7 +634,7 @@
             <div>
                 <h2>正规白资渠道</h2>
                 <p><strong>目前正规渠道成本极贵，但我司保证所有代充均为正规白资渠道，确保官方扣款与正版订阅，请放心使用。</strong></p>
-                <p>事出反常必有妖，现存低价有极高封号风险（嘿卡、0元购）或其他套路！（预付费等）</p>
+                <p>事出反常必有妖，现存低价有极高封号风险（嘿卡、0元购）或其他套路！</p>
             </div>
             <div class="policy-gallery">
                 <a class="policy-image-link" href="help/yk.png"><img src="help/yk.png" alt="预付费说明" class="notice-image" loading="lazy" decoding="async"></a>
@@ -537,7 +659,7 @@
 
         <div class="description policy-summary">
             <p>
-                180元价格构成（20美金加充卡手续费约145元+苹果ID或卡成本+磨损+服务器、设备、人工、稳定保障等成本)<strong>追求低价，注意黑卡和封号等风险！</strong>）
+                180元价格构成（20美金加充卡手续费约145元+苹果ID或卡成本+磨损+服务器、设备、人工、稳定保障等成本)<strong>追求低价，注意嘿卡和封号等风险！</strong>）
             </p>
         </div>
 
