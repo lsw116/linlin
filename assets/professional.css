@@ -1887,6 +1887,63 @@ body:not(.clean-home) #backToTopBtn {
     box-shadow: none;
   }
 
+  .guide-page > .subpage-topbar {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    z-index: 1300;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0;
+    padding: 12px;
+    gap: 10px;
+    align-items: stretch;
+    overflow: hidden;
+  }
+
+  .guide-page > .subpage-topbar nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .guide-page > .subpage-topbar nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .guide-page > .subpage-topbar nav a {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0 12px;
+    background: rgba(237, 243, 255, 0.72);
+    border: 1px solid rgba(185, 200, 220, 0.58);
+  }
+
+  body.guide-page {
+    padding: 136px 0 40px !important;
+  }
+
+  .guide-page > .container {
+    margin-top: 0 !important;
+  }
+
+  .guide-page .nav-bar {
+    position: static !important;
+    top: auto !important;
+  }
+
+  .guide-page #steps,
+  .guide-page #faq,
+  .guide-page #contact {
+    scroll-margin-top: 140px;
+  }
+
   .hero-route {
     display: grid;
     grid-template-columns: 1fr;
