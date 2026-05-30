@@ -1857,9 +1857,27 @@ body:not(.clean-home) #backToTopBtn {
 
 @media (max-width: 640px) {
   .site-header {
-    position: relative;
-    top: auto;
-    margin-top: 12px;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    z-index: 100;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0;
+    max-height: calc(100vh - 16px);
+    overflow: hidden;
+  }
+
+  .clean-home main {
+    padding-top: 180px;
+  }
+
+  #service,
+  #process,
+  #faq,
+  #video {
+    scroll-margin-top: 190px;
   }
 
   .nav-action {
