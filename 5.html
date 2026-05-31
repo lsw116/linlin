@@ -70,17 +70,17 @@
 
     header{
       text-align:center;
-      padding:6px 8px 4px;
+      padding:2px 8px 0;
     }
 
     h1{
-      margin:6px 0 8px;
+      margin:4px 0 8px;
       font-size:26px;
       font-weight:700;
     }
 
     .sub{
-      margin:0 0 14px;
+      margin:0 0 10px;
       font-size:14px;
       color:var(--text-2);
       line-height:1.7;
@@ -131,8 +131,8 @@
     }
 
     .contact{
-      margin-top:12px;
-      padding:12px 14px;
+      margin:4px 16px 14px;
+      padding:10px 12px;
       border-radius:var(--radius-sm);
       border:1px dashed rgba(0,0,0,.14);
       background:rgba(0,0,0,.02);
@@ -148,8 +148,8 @@
     }
 
     .stock-tip{
-      margin-top:10px;
-      padding:10px 12px;
+      margin-top:8px;
+      padding:9px 10px;
       border-radius:12px;
       background:var(--focus-bg);
       border:1px solid var(--focus-border);
@@ -163,7 +163,7 @@
     .system-list{
       list-style:none;
       padding:0;
-      margin:16px 0 0;
+      margin:12px 0 0;
       display:flex;
       flex-direction:column;
       gap:14px;
@@ -177,7 +177,7 @@
     }
 
     .system-header{
-      padding:16px 16px 12px;
+      padding:14px 16px 10px;
       border-bottom:1px solid var(--border);
       background:linear-gradient(180deg, rgba(0,122,255,.03) 0%, rgba(255,255,255,0) 100%);
     }
@@ -191,7 +191,7 @@
     }
 
     .system-actions{
-      padding:14px 16px 10px;
+      padding:14px 16px 12px;
       display:flex;
       flex-direction:column;
       gap:10px;
@@ -227,7 +227,7 @@
     }
 
     .steps-wrap{
-      padding:6px 16px 16px;
+      padding:0 16px 16px;
     }
 
     .content-block{
@@ -384,29 +384,6 @@
       <p class="sub">请选择对应充值系统，并按步骤完成卡密验证与充值提交。</p>
     </header>
 
-    <section class="section">
-      <p class="section-desc">
-        如未购买卡密，请点击进入购买：
-      </p>
-
-      <div class="purchase-wrap">
-        <a href="https://fe.dtyuedan.cn/shop/gptplus" target="_blank" rel="noopener noreferrer" class="purchase-link">
-          点击这里购买卡密
-        </a>
-      </div>
-
-      <p class="section-desc" style="margin-top:10px;">
-        请按所购卡密选择系统，验证卡密不通过多半是选错系统
-      </p>
-    </section>
-
-    <div class="contact">
-      客服 QQ（微信）：<strong>82765536</strong>（在线时间：9:00-23:59）
-      <div class="stock-tip">
-        如果充值提示无可用库存，可等会再试，或联系客服协助处理充值！
-      </div>
-    </div>
-
     <ul class="system-list">
       <li class="system-card">
 
@@ -424,6 +401,13 @@
           <a href="#" class="system-link" data-disabled-system-message="系统2暂未启用，请选择系统1">
             进入充值系统2
           </a>
+        </div>
+
+        <div class="contact">
+          客服 QQ（微信）：<strong>82765536</strong>（在线时间：9:00-23:59）
+          <div class="stock-tip">
+            如果充值提示无可用库存，可等会再试，或联系客服协助处理充值！
+          </div>
         </div>
 
         <div class="steps-wrap">
