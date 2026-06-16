@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自助充值与人工充值区别 | 文文AI</title>
+  <meta name="description" content="对比自助充值和人工充值的优点、缺点、到账时间、账单和升级 Pro 支持，帮助选择合适充值方式。">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="assets/professional.css?v=recharge-options-20260616">
+  <style>
+    .recharge-options-page main {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .compare-hero {
+      margin: 0 0 18px;
+      padding: 34px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .compare-hero .eyebrow {
+      margin: 0 0 8px !important;
+      color: var(--brand) !important;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .compare-hero h1 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      line-height: 1.12;
+      font-weight: 850;
+    }
+
+    .compare-hero p {
+      max-width: 62ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.75;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 0 0 18px;
+    }
+
+    .option-card {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      padding: 26px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .option-card.self-service {
+      border-top: 5px solid var(--brand);
+    }
+
+    .option-card.assisted {
+      border-top: 5px solid var(--accent-teal, #0f766e);
+    }
+
+    .option-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .option-icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 12px;
+      color: #ffffff;
+      font-size: 1.28rem;
+      font-weight: 850;
+    }
+
+    .self-service .option-icon {
+      background: var(--brand);
+    }
+
+    .assisted .option-icon {
+      background: var(--accent-teal, #0f766e);
+    }
+
+    .option-head h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.42rem;
+      line-height: 1.2;
+      font-weight: 820;
+    }
+
+    .option-head p {
+      margin: 3px 0 0;
+      color: var(--soft);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .option-section {
+      padding: 16px 0;
+      border-top: 1px solid #e7edf6;
+    }
+
+    .option-section h3 {
+      margin: 0 0 9px;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    .option-section ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .option-section li {
+      position: relative;
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .option-section li::before {
+      content: "";
+      position: absolute;
+      top: 0.72em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #9db8f2;
+    }
+
+    .assisted .option-section li::before {
+      background: #8fcac3;
+    }
+
+    .summary-band {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0 0 18px;
+    }
+
+    .summary-item {
+      padding: 20px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink) !important;
+      font-size: 1.05rem;
+    }
+
+    .summary-item span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .action-panel {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 22px;
+      background: #0f1f3d;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      color: #ffffff;
+    }
+
+    .action-panel p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.7;
+    }
+
+    .action-panel strong {
+      color: #ffffff !important;
+    }
+
+    .action-panel .action-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .action-panel a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .action-panel .primary-link {
+      background: #ffffff;
+      color: #0f1f3d;
+    }
+
+    .action-panel .secondary-link {
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      color: #ffffff;
+    }
+
+    .contact-qr-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.55);
+    }
+
+    .contact-qr-modal[hidden] {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+      .recharge-options-page main {
+        padding-top: 190px;
+      }
+
+      .compare-hero {
+        padding: 26px 22px;
+      }
+
+      .option-grid,
+      .summary-band {
+        grid-template-columns: 1fr;
+      }
+
+      .option-card {
+        padding: 22px;
+      }
+
+      .action-panel {
+        align-items: stretch;
+      }
+
+      .action-panel .action-links,
+      .action-panel a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="clean-home recharge-options-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="文文AI 首页">
+      <span class="brand-mark">文</span>
+      <span>
+        <strong>文文AI</strong>
+        <small>Chat.Gpt Plus 等会员服务</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="https://fe.dtyuedan.cn/shop/gptplus" target="_blank" rel="noopener noreferrer nofollow">购买商品</a>
+      <a href="help.html">充值帮助</a>
+      <a href="gpt170.html">价格说明</a>
+    </nav>
+    <a class="nav-action" href="#" data-contact-qr-open>联系客服</a>
+  </header>
+
+  <main>
+    <section class="compare-hero">
+      <p class="eyebrow">Recharge Options</p>
+      <h1>自助充值和人工充值怎么选</h1>
+      <p>两种方式都可以完成 Plus 充值，区别主要在到账速度、是否需要客服、是否有 GPT 付款账单，以及后续是否方便升级 PRO。</p>
+    </section>
+
+    <section class="option-grid" aria-label="充值方式对比">
+      <article class="option-card self-service">
+        <div class="option-head">
+          <span class="option-icon">自</span>
+          <div>
+            <h2>自助充值</h2>
+            <p>适合想快速完成、自己按说明操作的用户</p>
+          </div>
+        </div>
+        <div class="option-section">
+          <h3>优点</h3>
+          <ul>
+            <li>速度快，一般提交后 30 秒内充值完成。</li>
+            <li>无需对接客服，由自助系统完成。</li>
+          </ul>
+        </div>
+        <div class="option-section">
+          <h3>缺点</h3>
+          <ul>
+            <li>iOS 充值，无 GPT 付款账单。</li>
+            <li>在会员完全到期前无法升级 PRO。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="option-card assisted">
+        <div class="option-head">
+          <span class="option-icon">人</span>
+          <div>
+            <h2>人工充值</h2>
+            <p>适合需要账单、可能随时升级 PRO 的用户</p>
+          </div>
+        </div>
+        <div class="option-section">
+          <h3>优点</h3>
+          <ul>
+            <li>有 GPT 付款账单。</li>
+            <li>有需要时可随时升级到 PRO。</li>
+          </ul>
+        </div>
+        <div class="option-section">
+          <h3>缺点</h3>
+          <ul>
+            <li>需要对接客服，只能在客服在线时处理。</li>
+            <li>客服在线时间为 9:00-23:59，充值时间大概在 5-30 分钟内。</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="summary-band" aria-label="选择建议">
+      <div class="summary-item">
+        <strong>想快一点</strong>
+        <span>优先选自助充值，按说明提交后，一般 30 秒内完成。</span>
+      </div>
+      <div class="summary-item">
+        <strong>需要账单或可能升 PRO</strong>
+        <span>优先选人工充值，方便保留 GPT 付款账单，也方便后续升级。</span>
+      </div>
+    </section>
+
+    <section class="action-panel">
+      <p><strong>不确定选哪种？</strong><br>可以先联系客服说明你的账号情况和后续需求，再选择充值方式。</p>
+      <div class="action-links">
+        <a class="primary-link" href="https://fe.dtyuedan.cn/shop/gptplus" target="_blank" rel="noopener noreferrer nofollow">去购买商品</a>
+        <a class="secondary-link" href="#" data-contact-qr-open>联系客服</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="contact-qr-modal" data-contact-qr-modal hidden role="dialog" aria-modal="true" aria-labelledby="contactQrTitle">
+    <div class="contact-qr-dialog">
+      <button class="contact-qr-close" type="button" data-contact-qr-close aria-label="关闭">×</button>
+      <h2 id="contactQrTitle">联系客服</h2>
+      <p data-contact-qr-message>客服每日15小时在线，微信和 QQ 同号：82765536</p>
+      <img src="assets/contact-qrcode.png" alt="文文AI 微信二维码" class="contact-qr-image" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const modal = document.querySelector("[data-contact-qr-modal]");
+      const triggers = document.querySelectorAll("[data-contact-qr-open]");
+      if (!modal || !triggers.length) return;
+
+      const closeButtons = modal.querySelectorAll("[data-contact-qr-close]");
+      const closeModal = () => {
+        modal.hidden = true;
+      };
+      const openModal = () => {
+        modal.hidden = false;
+        const closeButton = modal.querySelector("[data-contact-qr-close]");
+        if (closeButton) closeButton.focus();
+      };
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          openModal();
+        });
+      });
+
+      closeButtons.forEach((button) => {
+        button.addEventListener("click", closeModal);
+      });
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.hidden) closeModal();
+      });
+    })();
+  </script>
+
+  <footer class="clean-footer">
+    <p>© 2024 文文AI. 本站提供会员充值协助服务，与 Open.AI 公司无关联关系。</p>
+  </footer>
+</body>
+</html>
