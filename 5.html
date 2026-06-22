@@ -542,7 +542,7 @@
             进入充值系统1
           </a>
 
-          <a href="https://czgpt.plus/" class="system-link" target="_blank" rel="noopener noreferrer" data-system-enabled="false" data-disabled-system-message="系统2暂未启用，请选择系统1">
+          <a href="https://czgpt.plus/" class="system-link" target="_blank" rel="noopener noreferrer" data-system-enabled="true" data-disabled-system-message="系统2暂未启用，请选择系统1" data-entry-message="验证卡密之后获取session数据，提交使用后，耐心等待 5~10 分钟充值完成">
             进入充值系统2
             <span class="system-status">暂未启用</span>
           </a>
@@ -593,9 +593,13 @@
 
   <script src="assets/contact-modal.js?v=20260531-contact-modal-v2"></script>
   <script>
-    document.querySelectorAll("[data-disabled-system-message]").forEach((link) => {
+    document.querySelectorAll("[data-disabled-system-message], [data-entry-message]").forEach((link) => {
       link.addEventListener("click", (event) => {
         if (link.dataset.systemEnabled !== "false") {
+          if (link.dataset.entryMessage) {
+            alert(link.dataset.entryMessage);
+          }
+
           return;
         }
 
