@@ -228,6 +228,36 @@
       transform:scale(.98);
     }
 
+    .system-link[data-system-enabled="false"]{
+      background:#8e8e93;
+      box-shadow:none;
+      cursor:not-allowed;
+    }
+
+    .system-link[data-system-enabled="false"]:hover,
+    .system-link[data-system-enabled="false"]:active{
+      background:#8e8e93;
+      transform:none;
+    }
+
+    .system-status{
+      display:inline-flex;
+      align-items:center;
+      min-height:22px;
+      padding:2px 8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.22);
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      line-height:1.4;
+      white-space:nowrap;
+    }
+
+    .system-link[data-system-enabled="true"] .system-status{
+      display:none;
+    }
+
     .steps-wrap{
       padding:0 16px 16px;
     }
@@ -512,8 +542,9 @@
             进入充值系统1
           </a>
 
-          <a href="https://czgpt.plus/" class="system-link" target="_blank" rel="noopener noreferrer">
+          <a href="https://czgpt.plus/" class="system-link" target="_blank" rel="noopener noreferrer" data-system-enabled="false" data-disabled-system-message="系统2暂未启用，请选择系统1">
             进入充值系统2
+            <span class="system-status">暂未启用</span>
           </a>
         </div>
 
@@ -564,6 +595,10 @@
   <script>
     document.querySelectorAll("[data-disabled-system-message]").forEach((link) => {
       link.addEventListener("click", (event) => {
+        if (link.dataset.systemEnabled !== "false") {
+          return;
+        }
+
         event.preventDefault();
         alert(link.dataset.disabledSystemMessage || "系统暂未启用，请选择其他系统");
       });
